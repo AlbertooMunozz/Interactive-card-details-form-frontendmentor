@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light_grayish_violet: hsl(270, 3%, 87%);
+  --Dark_grayish_violet: hsl(279, 6%, 55%);
+  --Very_dark_violet: hsl(278, 68%, 11%);
+  --active-input: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --red: hsl(0, 100%, 66%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk";
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+.container .container-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 75% 1fr;
+  position: relative;
+}
+.container .container-cards .container-cardsBackground {
+  background-image: url("../Assets/Images/bg-main-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container .container-cards .container-cardsWhiteSpace {
+  background-color: white;
+}
+.container .container-cards .cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.7rem;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 490px;
+}
+.container .container-cards .cards .card {
+  width: 380px;
+  height: 210px;
+  border-radius: 0.45rem;
+  overflow: hidden;
+  color: var(--White);
+  box-shadow: 13px 10px 26px -10px rgba(17, 1, 0, 0.58);
+}
+.container .container-cards .cards .card-front {
+  align-self: center;
+  padding: 1.2rem;
+  background-image: url("../Assets/Images/front.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container .container-cards .cards .card-front .card-front-information {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.container .container-cards .cards .card-front .card-front-information .card-holderName {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+}
+.container .container-cards .cards .card-front .card-front-information .card-holderName p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  padding-right: 0.2rem;
+}
+.container .container-cards .cards .card-front .card-front-information .card-expiration {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.container .container-cards .cards .card-front .card-front-information .card-number {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+}
+.container .container-cards .cards .card-back {
+  align-self: flex-end;
+  background-image: url("../Assets/Images/back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1.2rem;
+}
+.container .container-cards .cards .card-back .card-back-information {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.container .container-cards .cards .card-back .card-back-information .card-cvc {
+  position: absolute;
+  top: 43%;
+  right: 0.8rem;
+}
+.container .container-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+.container .container-form form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  width: 24.5rem;
+}
+.container .container-form form p {
+  font-size: 16px;
+  font-weight: lighter;
+  margin-bottom: 14px;
+  color: var(--Very_dark_violet);
+}
+.container .container-form form input {
+  width: 100%;
+  padding: 13px;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+  outline: transparent;
+  border: solid 1px var(--Light_grayish_violet);
+  color: var(--Very_dark_violet);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s border;
+}
+.container .container-form form input::-moz-placeholder {
+  font-size: 0.9rem;
+}
+.container .container-form form input::placeholder {
+  font-size: 0.9rem;
+}
+.container .container-form form input:focus {
+  border: solid 1px var(--Dark_grayish_violet);
+}
+.container .container-form form .error p {
+  color: var(--red);
+  font-size: 13px;
+}
+.container .container-form form button {
+  width: 100%;
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 0.45rem;
+  background-color: var(--Very_dark_violet);
+  color: var(--White);
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.3s background-color;
+  margin-top: 26px;
+  cursor: pointer;
+}
+.container .container-form form .container-form-information {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+}
+.container .container-form form .container-form-information .container-expiration-input {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.container .container-form .complete-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+.container .container-form .complete-form .complete-title {
+  color: var(--Very_dark_violet);
+}
+.container .container-form .complete-form .complete-message {
+  color: var(--Dark_grayish_violet);
+  font-size: 1rem;
+}
+.container .container-form .complete-form .complete-button {
+  width: 100%;
+}
+.container .container-form .complete-form .complete-button button {
+  padding: 0.5rem;
+  background-color: var(--Very_dark_violet);
+  color: white;
+  font-size: 1rem;
+  border-radius: 0.45rem;
+  border: transparent;
+  outline: transparent;
+  width: 100%;
+  font-family: "Space Grotesk";
+  cursor: pointer;
+}
+
+@media screen and (max-width: 903px) {
+  .container-cardsBackground {
+    background-image: url("../Assets/Images/bg-main-mobile.png");
+  }
+  .card {
+    width: 280px;
+    height: 155px;
+  }
+  .container .container-cards .container-cardsBackground {
+    background-image: url("../Assets/Images/bg-main-mobile.png");
+  }
+  .container .container-cards .cards {
+    width: 100%;
+  }
+  .container .container-cards .cards .card {
+    width: 280px;
+    height: 155px;
+  }
+  .container .container-cards .cards .card-front .card-front-information .card-number {
+    font-size: 1rem;
+  }
+  .container .container-cards .cards .card-front .card-logo {
+    width: 55px;
+  }
+  .container .container-cards .cards .card-front .card-logo img {
+    width: 100%;
+  }
+  .container .container-form form {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 780px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .container-cards {
+    flex: none;
+    height: 280px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 95% 1fr;
+  }
+  .container .container-cards .cards {
+    height: -moz-max-content;
+    height: max-content;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    gap: 0;
+  }
+  .container .container-cards .cards .card {
+    width: 350px;
+    height: 180px;
+  }
+  .container .container-cards .cards .card-front {
+    order: 2;
+    align-self: flex-start;
+  }
+  .container .container-cards .cards .card-back {
+    order: 1;
+    align-self: center;
+    margin-bottom: -66px;
+    padding: 2rem;
+  }
+  .container .container-form {
+    flex: none;
+    height: 450px;
+    margin-top: 1rem;
+  }
+  .container .container-form form {
+    row-gap: 1rem;
+  }
+  .container .container-form form p {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 435px) {
+  .container .container-cards .cards {
+    transform: translate(-50%, -30%);
+  }
+  .container .container-cards .cards .card {
+    width: 280px;
+    height: 155px;
+  }
+  .container .container-cards .cards .card-front .card-front-information .card-number {
+    font-size: 1rem;
+  }
+  .container .container-cards .cards .card-front .card-logo {
+    width: 50px;
+  }
+  .container .container-cards .cards .card-front .card-logo img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 363px) {
+  .container {
+    font-size: 0.75rem;
+  }
+  .container .container-cards {
+    height: 200px;
+  }
+  .container .container-cards .cards .card {
+    width: 230px;
+    height: 120px;
+  }
+  .container .container-cards .cards .card-front {
+    padding: 0.7rem;
+  }
+  .container .container-cards .cards .card-front .card-front-information .card-number {
+    bottom: 1.8rem;
+    font-size: 0.75rem;
+  }
+  .container .container-cards .cards .card-back {
+    margin-bottom: -45px;
+  }
+}/*# sourceMappingURL=Styles.css.map */
