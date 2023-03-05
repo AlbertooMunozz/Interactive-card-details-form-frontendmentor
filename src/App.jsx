@@ -8,12 +8,10 @@ const App =() => {
     
     return (
      <Provider>
-        <section>
             <div className="container">
                 <CardsContainer/>
                 <FormContainer/>
             </div>
-        </section>
      </Provider>
     )
 }
